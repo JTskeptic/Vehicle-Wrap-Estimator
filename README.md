@@ -1,37 +1,7 @@
-## Welcome to GitHub Pages
+Vehicle Wrap Estimator
 
-You can use the [editor on GitHub](https://github.com/JTskeptic/Vehicle-Wrap-Estimator/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is a simple web app to determine an estimated cost for a vehicle wrap. I work for a vehicle wrap shop and a lot of my time is spent estimating wraps for potential clients and businesses with fleet vehicles. This app takes the info I normally take, and does what I normally do with that info to determine a dollar amount. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This is still very raw, without much pizazz at all. It does the basic functions needed for the job, however I would like to update a few things on it. One thing would be to have a drop-down for the "inches" input to toggle between inches and feet. 
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JTskeptic/Vehicle-Wrap-Estimator/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+I am also not sure if I've written the JavaScript on this properly or at least the best way. The entire script is a single function, and I know I probably shouldn't be calling the function through the HTML, as that is a dated practive I'm told. However, I am very new to programming and this code works so I haven't messed with it yet. 
