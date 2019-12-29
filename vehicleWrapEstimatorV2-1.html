@@ -4,251 +4,259 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<!--CSS-->
     <style>
-    
     body {
-    background-color: #b1b1b1;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding: 20px;
-}
-
-main {
-    width: 80%;
-    max-width: 800px;
-    margin: 1rem auto;
-}
-
-/*----------------------------------------
-
-CONTAINER STYLING
-
-----------------------------------------*/
-
-.container-one {
-    background-image: linear-gradient(#eeeeee, #cccccc);
-    border: 2px solid #333333;
-    border-radius: 10px;
-    box-shadow: 3px 3px 7px #8d8d8d;
-    padding: 0px 15px 15px 15px;
-}
-
-.flexbox-one, .flexbox-one-a, .flexbox-two {
-    display: flex;
-    flex-direction: row; /*default is for everything to be in a row*/
-    justify-content: space-around;
-}
-
-.nametag {
-    font-size: 25px;
-}
-
-@media (max-width: 700px) {
+        background-color: #b1b1b1;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        padding: 20px;
+    }
+    
     main {
-        width: 90%;
+        width: 80%;
+        max-width: 800px;
+        margin: 1rem auto;
+    }
+    
+    /*----------------------------------------
+    
+    CONTAINER STYLING
+    
+    ----------------------------------------*/
+    
+    .container-one {
+        background-image: linear-gradient(#eeeeee, #cccccc);
+        border: 2px solid #333333;
+        border-radius: 10px;
+        box-shadow: 3px 3px 7px #8d8d8d;
+        padding: 0px 15px 15px 15px;
     }
     
     .flexbox-one, .flexbox-one-a, .flexbox-two {
-        flex-direction: column; /*on smaller screens, the two interior divs will show in a column instead of row*/
+        display: flex;
+        flex-direction: row; /*default is for everything to be in a row*/
+        justify-content: space-around;
     }
-
-    .options {
-        width: 60%;
-        margin: 0 20px 0 0;
-    }
-}
-
-/*----------------------------------------
-
-BODY SIZES SECTION - NUMBER INPUTS
-
-----------------------------------------*/
-
-.body-sizes {
-    display: flex;
-    flex-direction: column;
-    flex-basis: auto;
-    font-size: 10px;
-    flex-wrap: nowrap;
-}
-
-.body-sizes label {
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-.body-sizes input {
-    padding: 3px;
-    margin-top: 5px;
-    min-width: 50px;
-    max-width: 200px;
-}
-
-.body-sizes #side-width, #hood-width, #back-width, #roof-width {
-    margin-bottom: 7px;
-}
-
-/*----------------------------------------
-
-OPTIONS SECTION - CHECKBOXES AND RADIOS
-
-----------------------------------------*/
-
-.options {
-    margin: 20px 20px 20px 0px;
-    padding: 0px 10px 10px 30px;
-    display: flex;
-    background-color: #bbbbbb;
-    border: 1px solid #bbbbbb;
-    border-radius: 12px;
-    box-shadow: 0px 0px 15px #bbbbbb;
-    width: 90%;
-    flex-direction: column;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.options p {
-    font-weight: bold;
-    font-size: 20px;
-    margin: 15px 5px 10px 5px;
-    text-shadow: 1px 1px 4px #fefefe;
-}
-
-.options input[type="checkbox"] {
-    width: 19px;
-    height: 19px;
-    vertical-align: middle;
-}
-
-.options input[type="radio"] {
-    width: 13px;
-    height: 13px;
-    margin: 5px 0 0 25px;
-}
-
-.reveal-if-active-front label, .reveal-if-active-back label, .reveal-if-active-handles label {
-    font-size: 13px;
-    font-weight: normal;
-    margin: 0px 0px 0px 5px;
-}
-
-.reveal-if-active-front, .reveal-if-active-back, .reveal-if-active-handles {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-}
-
-.options input[type="checkbox"]:checked ~ .reveal-if-active-front {
-    opacity: 1;
-    max-height: 100px; 
-    overflow: visible;
-}
-
-.options input[type="checkbox"]:checked ~ .reveal-if-active-back {
-    opacity: 1;
-    max-height: 100px; 
-    overflow: visible;
-}
-
-.options input[type="checkbox"]:checked ~ .reveal-if-active-handles {
-    opacity: 1;
-    max-height: 100px; 
-    overflow: visible;
-}
-
-/*----------------------------------------
-
-SQFT PRICING RATE SECTION - NUMBER INPUT
-
-----------------------------------------*/
-
-.sqft-rate {
-    margin: 5px 20px;
-}
-
-.sqft-rate label {
-    font-weight: bold;
-    font-size: 20px;
-    margin: 15px 5px 10px 5px;
-    text-shadow: 1px 1px 4px #fefefe;
-}
-
-.sqft-rate input {
-    margin: 10px 3px;
-    min-width: 10px;
-    max-width: 50px;
-    padding: 3px;
-}
-
-/*----------------------------------------
-
-CALCULATE BUTTON SECTION - SUBMIT BUTTON
-
-----------------------------------------*/
-
-.calculate-button button {
-    padding: 5px;
-    margin: 5px;
-    background-color: #333333;
-    color: #eeeeee;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    min-width: 100px;
-    min-height: 45px;
-    border: 1px solid #333333;
-    border-radius: 15px;
-    font-size: 16px;
-    transition: 0.5s;
-    box-shadow: 1px 1px 3px #bbbbbb;
-}
-
-.calculate-button button:hover {
-    background-color: #696969;
-    border: 1px solid #696969;
-    min-width: 105px;
-    min-height: 50px;
-    box-shadow: 2px 2px 7px #333333;
-}
-
-/*----------------------------------------
-
-RESULTS SECTION - JAVASCRIPT OUTPUT
-
-----------------------------------------*/
-
-.results {
-    display: flex;
-    flex-direction: column;
-    background-color: #bbbbbb;
-    border: 1px solid #bbbbbb;
-    border-radius: 12px;
-    box-shadow: 0px 0px 15px #bbbbbb;
-    width: 50%;
-    min-height: 75px;
-    margin: 20px;
-    padding: 20px;
-}
-
-.results label {
-    font-weight: bold;
-    font-size: 20px;
-    margin: 0px 20px 10px 20px;
-    text-shadow: 1px 1px 4px #fefefe;
-}
-
-.results p[id="total-price"] {
-    font-size: 18px;
-    margin: 0px 0px 5px 30px;
-}
-
-.results p[id="total-sqft"], p[id="body-price"], p[id="options-price"], p[id="sqft-price-rate"] {
-    font-size: 12px;
-    margin: 0px 0px 3px 35px;
-}
-
-    </style>
     
+    .nametag {
+        font-size: 25px;
+    }
+    
+    @media (max-width: 700px) {
+        main {
+            width: 90%;
+        }
+        
+        .flexbox-one, .flexbox-one-a, .flexbox-two {
+            flex-direction: column; /*on smaller screens, the two interior divs will show in a column instead of row*/
+        }
+    
+        .options {
+            width: 60%;
+            margin: 0 20px 0 0;
+        }
+    }
+    
+    /*----------------------------------------
+    
+    BODY SIZES SECTION - NUMBER INPUTS
+    
+    ----------------------------------------*/
+    
+    .body-sizes {
+        display: flex;
+        flex-direction: column;
+        flex-basis: auto;
+        font-size: 10px;
+        flex-wrap: nowrap;
+    }
+    
+    .body-sizes label {
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+    
+    .body-sizes input {
+        padding: 3px;
+        margin-top: 5px;
+        min-width: 50px;
+        max-width: 200px;
+    }
+    
+    .body-sizes #side-width, #hood-width, #back-width, #roof-width {
+        margin-bottom: 7px;
+    }
+    
+    /*----------------------------------------
+    
+    OPTIONS SECTION - CHECKBOXES AND RADIOS
+    
+    ----------------------------------------*/
+    
+    .options {
+        margin: 20px 20px 20px 0px;
+        padding: 0px 10px 10px 30px;
+        display: flex;
+        background-color: #bbbbbb;
+        border: 1px solid #bbbbbb;
+        border-radius: 12px;
+        box-shadow: 0px 0px 15px #bbbbbb;
+        width: 90%;
+        flex-direction: column;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    
+    .options p {
+        font-weight: bold;
+        font-size: 20px;
+        margin: 15px 5px 10px 5px;
+        text-shadow: 1px 1px 4px #fefefe;
+    }
+    
+    .options input[type="checkbox"] {
+        width: 19px;
+        height: 19px;
+        vertical-align: middle;
+    }
+    
+    .options input[type="radio"] {
+        width: 13px;
+        height: 13px;
+        margin: 5px 0 0 25px;
+    }
+    
+    .reveal-if-active-front label, .reveal-if-active-back label, .reveal-if-active-handles label {
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0px 0px 0px 5px;
+    }
+    
+    .reveal-if-active-front, .reveal-if-active-back, .reveal-if-active-handles {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+    }
+    
+    .options input[type="checkbox"]:checked ~ .reveal-if-active-front {
+        opacity: 1;
+        max-height: 100px; 
+        overflow: visible;
+    }
+    
+    .options input[type="checkbox"]:checked ~ .reveal-if-active-back {
+        opacity: 1;
+        max-height: 100px; 
+        overflow: visible;
+    }
+    
+    .options input[type="checkbox"]:checked ~ .reveal-if-active-handles {
+        opacity: 1;
+        max-height: 100px; 
+        overflow: visible;
+    }
+    
+    /*----------------------------------------
+    
+    SQFT PRICING RATE SECTION - NUMBER INPUT
+    
+    ----------------------------------------*/
+    
+    .sqft-rate {
+        margin: 5px 20px;
+    }
+    
+    .sqft-rate label {
+        font-weight: bold;
+        font-size: 20px;
+        margin: 15px 5px 10px 5px;
+        text-shadow: 1px 1px 4px #fefefe;
+    }
+    
+    .sqft-rate input {
+        margin: 10px 3px;
+        min-width: 10px;
+        max-width: 50px;
+        padding: 3px;
+    }
+    
+    .flexbox-two #default {
+        font-size: 10px;
+        font-style: italic;
+    }
+    
+    /*----------------------------------------
+    
+    CALCULATE BUTTON SECTION - SUBMIT BUTTON
+    
+    ----------------------------------------*/
+    
+    .calculate-button button {
+        padding: 5px;
+        margin: 5px 5px 5px 25px;
+        background-color: #333333;
+        color: #eeeeee;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        min-width: 100px;
+        min-height: 45px;
+        border: 1px solid #333333;
+        border-radius: 15px;
+        font-size: 16px;
+        transition: 0.5s;
+        box-shadow: 1px 1px 3px #bbbbbb;
+    }
+    
+    .calculate-button button:hover {
+        background-color: #696969;
+        border: 1px solid #696969;
+        min-width: 105px;
+        min-height: 50px;
+        box-shadow: 2px 2px 7px #333333;
+    }
+    
+    /*----------------------------------------
+    
+    RESULTS SECTION - JAVASCRIPT OUTPUT
+    
+    ----------------------------------------*/
+    
+    .results {
+        display: flex;
+        flex-direction: column;
+        background-color: #bbbbbb;
+        border: 1px solid #bbbbbb;
+        border-radius: 12px;
+        box-shadow: 0px 0px 15px #bbbbbb;
+        width: 50%;
+        min-height: 75px;
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    .results label {
+        font-weight: bold;
+        font-size: 20px;
+        margin: 0px 20px 10px 20px;
+        text-shadow: 1px 1px 4px #fefefe;
+    }
+    
+    .results p[id="total-price"] {
+        font-size: 18px;
+        margin: 0px 0px 5px 30px;
+    }
+    
+    .results p[id="total-sqft"], p[id="body-price"], p[id="options-price"], p[id="sqft-price-rate"] {
+        font-size: 12px;
+        margin: 0px 0px 3px 35px;
+    }
+    
+    #copyright {
+        font-size: 11px;
+        text-align: center;
+    }
+    </style>
 	<title>Vehicle Wrap Estimator Ver2.1</title>
 </head>
 
@@ -346,6 +354,7 @@ RESULTS SECTION - JAVASCRIPT OUTPUT
                         <div class="sqft-rate-input">
                         $<input type="number" id="sqft-rate" placeholder="0.00"> per square foot
                         </div>
+                    <p id="default">*if you do not enter a sqft rate, a default rate will be used based on the total sqft entered.</p>
                     <br>
                     <div class="calculate-button">
                         <button type="button" onclick="totalPrice()">Calculate</button>
@@ -361,6 +370,7 @@ RESULTS SECTION - JAVASCRIPT OUTPUT
                         <p id="options-price"></p>
                     </div>
                 </div>
+                <p id="copyright">&copy; 2019<script>new Date().getFullYear()>2019&&document.write("-"+new Date().getFullYear());</script> Jason Thomas.</p>
 
         </form>
 
@@ -368,257 +378,256 @@ RESULTS SECTION - JAVASCRIPT OUTPUT
 
 </main>
 
+    <!--This is the main script file-->
     <script>
-    
-        
+            
 
-// ---------------------------------
-// RESULTS BUTTON FUNCTION
-// ---------------------------------
+        // ---------------------------------
+        // RESULTS BUTTON FUNCTION
+        // ---------------------------------
 
-function totalPrice() {
+        function totalPrice() {
 
-// ---------------------------------
-// ------------SIDE SQFT------------
-// ---------------------------------
+        // ---------------------------------
+        // ------------SIDE SQFT------------
+        // ---------------------------------
 
-    var sideHeight = parseFloat(document.getElementById("side-height").value);
-    var sideWidth = parseFloat(document.getElementById("side-width").value);
-    
-    sideHeight = Math.ceil(sideHeight);
-    sideWidth = Math.ceil(sideWidth);
+            var sideHeight = parseFloat(document.getElementById("side-height").value);
+            var sideWidth = parseFloat(document.getElementById("side-width").value);
+            
+            sideHeight = Math.ceil(sideHeight);
+            sideWidth = Math.ceil(sideWidth);
 
-    var numberOfSidePanels = (sideWidth + 6) / 52;
-    numberOfSidePanels = Math.ceil(numberOfSidePanels);
+            var numberOfSidePanels = (sideWidth + 6) / 52;
+            numberOfSidePanels = Math.ceil(numberOfSidePanels);
 
-    if (sideHeight <= 50) {
-        sideHeight = 54;
-        sideWidth = sideWidth + 6;
-    } else if (sideHeight <= 56) {
-        sideHeight = 60;
-        sideWidth = sideWidth + 6;
-    } else if (sideHeight > 56) {
-        sideHeight = sideHeight + 6;
-        sideWidth = numberOfSidePanels * 54;
-    } else if ((sideHeight = isNaN) || (sideWidth = isNaN)) {
-        sideHeight = 0;
-        sideWidth = 0;
-    }
+            if (sideHeight <= 50) {
+                sideHeight = 54;
+                sideWidth = sideWidth + 6;
+            } else if (sideHeight <= 56) {
+                sideHeight = 60;
+                sideWidth = sideWidth + 6;
+            } else if (sideHeight > 56) {
+                sideHeight = sideHeight + 6;
+                sideWidth = numberOfSidePanels * 54;
+            } else if ((sideHeight = isNaN) || (sideWidth = isNaN)) {
+                sideHeight = 0;
+                sideWidth = 0;
+            }
 
-    let sideSize = Math.ceil((sideHeight * sideWidth) / 144);
-    let sideSizeBoth = sideSize * 2;
+            let sideSize = Math.ceil((sideHeight * sideWidth) / 144);
+            let sideSizeBoth = sideSize * 2;
 
-// ---------------------------------
-// ------------HOOD SQFT------------
-// ---------------------------------
+        // ---------------------------------
+        // ------------HOOD SQFT------------
+        // ---------------------------------
 
-    var hoodHeight = parseFloat(document.getElementById("hood-height").value);
-    var hoodWidth = parseFloat(document.getElementById("hood-width").value);
-    
-    hoodHeight = Math.ceil(hoodHeight);
-    hoodWidth = Math.ceil(hoodWidth);
+            var hoodHeight = parseFloat(document.getElementById("hood-height").value);
+            var hoodWidth = parseFloat(document.getElementById("hood-width").value);
+            
+            hoodHeight = Math.ceil(hoodHeight);
+            hoodWidth = Math.ceil(hoodWidth);
 
-    var numberOfHoodPanels = (hoodWidth + 6) / 52;
-    numberOfHoodPanels = Math.ceil(numberOfHoodPanels);
+            var numberOfHoodPanels = (hoodWidth + 6) / 52;
+            numberOfHoodPanels = Math.ceil(numberOfHoodPanels);
 
-    if (hoodHeight <= 50) {
-        hoodHeight = 54;
-        hoodWidth = hoodWidth + 6;
-    } else if (hoodHeight <= 56) {
-        hoodHeight = 60;
-        hoodWidth = hoodWidth + 6;
-    } else if ((hoodHeight > 56) && (hoodWidth <= 50)) {
-        hoodHeight = hoodHeight + 6;
-        hoodWidth = 54;
-    } else if ((hoodHeight > 56) && (hoodWidth <= 56)) {
-        hoodHeight = hoodHeight + 6;
-        hoodWidth = 60;
-    } else if ((hoodHeight > 56) && (hoodWidth > 56)) {
-        hoodHeight = hoodHeight + 6;
-        hoodWidth = numberOfHoodPanels * 54;
-    } else if ((hoodHeight = isNaN) || (hoodWidth = isNaN)) {
-        hoodHeight = 0;
-        hoodWidth = 0;
-    }
+            if (hoodHeight <= 52) {
+                hoodHeight = 54;
+                hoodWidth = hoodWidth + 6;
+            } else if (hoodHeight <= 58) {
+                hoodHeight = 60;
+                hoodWidth = hoodWidth + 6;
+            } else if ((hoodHeight > 58) && (hoodWidth <= 52)) {
+                hoodHeight = hoodHeight + 6;
+                hoodWidth = 54;
+            } else if ((hoodHeight > 58) && (hoodWidth <= 58)) {
+                hoodHeight = hoodHeight + 6;
+                hoodWidth = 60;
+            } else if ((hoodHeight > 58) && (hoodWidth > 58)) {
+                hoodHeight = hoodHeight + 6;
+                hoodWidth = numberOfHoodPanels * 54;
+            } else if ((hoodHeight = isNaN) || (hoodWidth = isNaN)) {
+                hoodHeight = 0;
+                hoodWidth = 0;
+            }
 
-    let hoodSize = Math.ceil((hoodHeight * hoodWidth) / 144);
+            let hoodSize = Math.ceil((hoodHeight * hoodWidth) / 144);
 
-// ---------------------------------
-// ------------BACK SQFT------------
-// ---------------------------------
+        // ---------------------------------
+        // ------------BACK SQFT------------
+        // ---------------------------------
 
-    var backHeight = parseFloat(document.getElementById("back-height").value);
-    var backWidth = parseFloat(document.getElementById("back-width").value);
-    
-    backHeight = Math.ceil(backHeight);
-    backWidth = Math.ceil(backWidth);
+            var backHeight = parseFloat(document.getElementById("back-height").value);
+            var backWidth = parseFloat(document.getElementById("back-width").value);
+            
+            backHeight = Math.ceil(backHeight);
+            backWidth = Math.ceil(backWidth);
 
-    var numberOfBackPanels = (backWidth + 6) / 52;
-    numberOfBackPanels = Math.ceil(numberOfBackPanels);
+            var numberOfBackPanels = (backWidth + 6) / 52;
+            numberOfBackPanels = Math.ceil(numberOfBackPanels);
 
-    if (backHeight <= 50) {
-        backHeight = 54;
-        backWidth = backWidth + 6;
-    } else if (backHeight <= 56) {
-        backHeight = 60;
-        backWidth = backWidth + 6;
-    } else if ((backHeight > 56) && (backWidth <= 50)) {
-        backHeight = backHeight + 6;
-        backWidth = 54;
-    } else if ((backHeight > 56) && (backWidth <= 56)) {
-        backHeight = backHeight + 6;
-        backWidth = 60;
-    } else if ((backHeight > 56) && (backWidth > 56)) {
-        backHeight = backHeight + 6;
-        backWidth = numberOfBackPanels * 54;
-    } else if ((backHeight = isNaN) || (backWidth = isNaN)) {
-        backHeight = 0;
-        backWidth = 0;
-    }
+            if (backHeight <= 50) {
+                backHeight = 54;
+                backWidth = backWidth + 6;
+            } else if (backHeight <= 56) {
+                backHeight = 60;
+                backWidth = backWidth + 6;
+            } else if ((backHeight > 56) && (backWidth <= 50)) {
+                backHeight = backHeight + 6;
+                backWidth = 54;
+            } else if ((backHeight > 56) && (backWidth <= 56)) {
+                backHeight = backHeight + 6;
+                backWidth = 60;
+            } else if ((backHeight > 56) && (backWidth > 56)) {
+                backHeight = backHeight + 6;
+                backWidth = numberOfBackPanels * 54;
+            } else if ((backHeight = isNaN) || (backWidth = isNaN)) {
+                backHeight = 0;
+                backWidth = 0;
+            }
 
-    let backSize = Math.ceil((backHeight * backWidth) / 144);
+            let backSize = Math.ceil((backHeight * backWidth) / 144);
 
-// ---------------------------------
-// ------------ROOF SQFT------------
-// ---------------------------------
+        // ---------------------------------
+        // ------------ROOF SQFT------------
+        // ---------------------------------
 
-    var roofHeight = parseFloat(document.getElementById("roof-height").value);
-    var roofWidth = parseFloat(document.getElementById("roof-width").value);
-    
-    roofHeight = Math.ceil(roofHeight);
-    roofWidth = Math.ceil(roofWidth);
+            var roofHeight = parseFloat(document.getElementById("roof-height").value);
+            var roofWidth = parseFloat(document.getElementById("roof-width").value);
+            
+            roofHeight = Math.ceil(roofHeight);
+            roofWidth = Math.ceil(roofWidth);
 
-    var numberOfRoofPanels = (roofWidth + 6) / 52;
-    numberOfRoofPanels = Math.ceil(numberOfRoofPanels);
+            var numberOfRoofPanels = (roofWidth + 6) / 52;
+            numberOfRoofPanels = Math.ceil(numberOfRoofPanels);
 
-    if (roofHeight <= 50) {
-        roofHeight = 54;
-        roofWidth = roofWidth + 6;
-    } else if (roofHeight <= 56) {
-        roofHeight = 60;
-        roofWidth = roofWidth + 6;
-    } else if ((roofHeight > 56) && (roofWidth <= 50)) {
-        roofHeight = roofHeight + 6;
-        roofWidth = 54;
-    } else if ((roofHeight > 56) && (roofWidth <= 56)) {
-        roofHeight = roofHeight + 6;
-        roofWidth = 60;
-    } else if ((roofHeight > 56) && (roofWidth > 56)) {
-        roofHeight = roofHeight + 6;
-        roofWidth = numberOfRoofPanels * 54;
-    } else if ((roofHeight = isNaN) || (roofWidth = isNaN)) {
-        roofHeight = 0;
-        roofWidth = 0;
-    }
+            if (roofHeight <= 52) {
+                roofHeight = 54;
+                roofWidth = roofWidth + 6;
+            } else if (roofHeight <= 58) {
+                roofHeight = 60;
+                roofWidth = roofWidth + 6;
+            } else if ((roofHeight > 58) && (roofWidth <= 52)) {
+                roofHeight = roofHeight + 6;
+                roofWidth = 54;
+            } else if ((roofHeight > 58) && (roofWidth <= 58)) {
+                roofHeight = roofHeight + 6;
+                roofWidth = 60;
+            } else if ((roofHeight > 58) && (roofWidth > 58)) {
+                roofHeight = roofHeight + 6;
+                roofWidth = numberOfRoofPanels * 54;
+            } else if ((roofHeight = isNaN) || (roofWidth = isNaN)) {
+                roofHeight = 0;
+                roofWidth = 0;
+            }
 
-    let roofSize = Math.ceil((roofHeight * roofWidth) / 144);
+            let roofSize = Math.ceil((roofHeight * roofWidth) / 144);
 
-// ---------------------------------
-// ------BODY-SIZE TOTAL SQFT-------
-// ---------------------------------
+        // ---------------------------------
+        // ------BODY-SIZE TOTAL SQFT-------
+        // ---------------------------------
 
-    let bodySqft = sideSizeBoth + hoodSize + backSize + roofSize;
+            let bodySqft = sideSizeBoth + hoodSize + backSize + roofSize;
 
-    document.getElementById("total-sqft").innerHTML = bodySqft + ' sqft total, not including options';
+            document.getElementById("total-sqft").innerHTML = bodySqft + ' sqft total, not including options';
 
-// ---------------------------------
-// --------OPTIONS PRICING----------
-// ---------------------------------
+        // ---------------------------------
+        // --------OPTIONS PRICING----------
+        // ---------------------------------
 
-    var frontBumper;
-    if (document.getElementById("front-standard").checked) {
-        frontBumper = 250.00;
-    } else if (document.getElementById("front-complex").checked) {
-        frontBumper = 300.00;
-    } else if (document.getElementById("front-highlycomplex").checked) {
-        frontBumper = 350.00;
-    } else {
-        frontBumper = 0.00;
-    }
+            var frontBumper;
+            if (document.getElementById("front-standard").checked) {
+                frontBumper = 250.00;
+            } else if (document.getElementById("front-complex").checked) {
+                frontBumper = 300.00;
+            } else if (document.getElementById("front-highlycomplex").checked) {
+                frontBumper = 350.00;
+            } else {
+                frontBumper = 0.00;
+            }
 
-    if(document.getElementById("front-bumper").checked == false) {
-        frontBumper = 0.00;
-    } 
+            if(document.getElementById("front-bumper").checked == false) {
+                frontBumper = 0.00;
+            } 
 
-    var backBumper;
-    if (document.getElementById("back-standard").checked) {
-        backBumper = 250.00;
-    } else if (document.getElementById("back-complex").checked) {
-        backBumper = 300.00;
-    } else if (document.getElementById("back-highlycomplex").checked) {
-        backBumper = 350.00;
-    } else {
-        backBumper = 0.00;
-    }
+            var backBumper;
+            if (document.getElementById("back-standard").checked) {
+                backBumper = 250.00;
+            } else if (document.getElementById("back-complex").checked) {
+                backBumper = 300.00;
+            } else if (document.getElementById("back-highlycomplex").checked) {
+                backBumper = 350.00;
+            } else {
+                backBumper = 0.00;
+            }
 
-    if(document.getElementById("back-bumper").checked == false) {
-        backBumper = 0.00;
-    } 
+            if(document.getElementById("back-bumper").checked == false) {
+                backBumper = 0.00;
+            } 
 
-    var mirrors;
-    if (document.getElementById("mirrors").checked) {
-        mirrors = 150.00;
-    } else {
-        mirrors = 0.00;
-    }
+            var mirrors;
+            if (document.getElementById("mirrors").checked) {
+                mirrors = 150.00;
+            } else {
+                mirrors = 0.00;
+            }
 
-    if(document.getElementById("mirrors").checked == false) {
-        Mirrors = 0.00;
-    } 
+            if(document.getElementById("mirrors").checked == false) {
+                Mirrors = 0.00;
+            } 
 
-    var doorHandles;
-    if (document.getElementById("two-handles").checked) {
-        doorHandles = 150.00;
-    } else if (document.getElementById("four-handles").checked) {
-        doorHandles = 300.00;
-    } else {
-        doorHandles = 0.00;
-    }
+            var doorHandles;
+            if (document.getElementById("two-handles").checked) {
+                doorHandles = 150.00;
+            } else if (document.getElementById("four-handles").checked) {
+                doorHandles = 300.00;
+            } else {
+                doorHandles = 0.00;
+            }
 
-    if(document.getElementById("door-handles").checked == false) {
-        doorHandles = 0.00;
-    } 
+            if(document.getElementById("door-handles").checked == false) {
+                doorHandles = 0.00;
+            } 
 
-    var optionsPrice = frontBumper + backBumper + mirrors + doorHandles;
+            var optionsPrice = frontBumper + backBumper + mirrors + doorHandles;
 
-    document.getElementById("options-price").innerHTML = '$' + optionsPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' total for options';
+            document.getElementById("options-price").innerHTML = '$' + optionsPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' total for options';
 
-// ---------------------------------
-// -----------SQFT PRICE------------
-// ---------------------------------
+        // ---------------------------------
+        // -----------SQFT PRICE------------
+        // ---------------------------------
 
-    var sqftRate = parseFloat(document.getElementById("sqft-rate").value);
+            var sqftRate = parseFloat(document.getElementById("sqft-rate").value);
 
-    // this block below sets the default sqft rates if there is no input.
+            // this block below sets the default sqft rates if there is no input.
 
-    if ((isNaN(sqftRate)) && (bodySqft < 50)) {
-        sqftRate = 14;
-    } else if ((isNaN(sqftRate)) && (bodySqft < 100)) {
-        sqftRate = 12;
-    } else if ((isNaN(sqftRate)) && (bodySqft < 200)) {
-        sqftRate = 10;
-    } else if ((isNaN(sqftRate)) && (bodySqft < 300)) {
-        sqftRate = 9;
-    } else if ((isNaN(sqftRate)) && (bodySqft >= 300)) {
-        sqftRate = 8;
-    }
+            if ((isNaN(sqftRate)) && (bodySqft < 50)) {
+                sqftRate = 14;
+            } else if ((isNaN(sqftRate)) && (bodySqft < 100)) {
+                sqftRate = 12;
+            } else if ((isNaN(sqftRate)) && (bodySqft < 200)) {
+                sqftRate = 10;
+            } else if ((isNaN(sqftRate)) && (bodySqft < 300)) {
+                sqftRate = 9;
+            } else if ((isNaN(sqftRate)) && (bodySqft >= 300)) {
+                sqftRate = 8;
+            }
 
-    document.getElementById("sqft-price-rate").innerHTML = '@ $' + sqftRate.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' per sqft';
+            document.getElementById("sqft-price-rate").innerHTML = '@ $' + sqftRate.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' per sqft';
 
-// ---------------------------------
-// -------FINAL PRICE TOTAL---------
-// ---------------------------------
+        // ---------------------------------
+        // -------FINAL PRICE TOTAL---------
+        // ---------------------------------
 
-    var bodyPrice = bodySqft * sqftRate;
+            var bodyPrice = bodySqft * sqftRate;
 
-    document.getElementById("body-price").innerHTML = '$' + bodyPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' for the main wrap before options';
+            document.getElementById("body-price").innerHTML = '$' + bodyPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' for the main wrap before options';
 
-    var totalPrice = bodyPrice + optionsPrice;
+            var totalPrice = bodyPrice + optionsPrice;
 
-    document.getElementById("total-price").innerHTML = 'Total: $' + totalPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById("total-price").innerHTML = 'Total: $' + totalPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
-}
-
+        }
     </script>
 
 </body>
